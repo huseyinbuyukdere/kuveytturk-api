@@ -1,0 +1,32 @@
+{
+  "name": "kuveytturk-api",
+  "version": "1.0.0",
+  "description": "Javascript library to use Kuveyt Turk Participiant Bank api",
+  "main": "lib/kuveytturk-api.min.js",
+  "scripts": {
+    "build": "webpack --env build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huseyinbuyukdere/kuveytturk-api.git"
+  },
+  "keywords": [
+    "kuveytturk",
+    "api",
+    "javascript"
+  ],
+  "author": "Huseyin Buyukdere <hbuyukderece@gmail.com> (http://teknolojigelistirmemerkezi.blogspot.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huseyinbuyukdere/kuveytturk-api/issues"
+  },
+  "homepage": "https://github.com/huseyinbuyukdere/kuveytturk-api#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "8.0.6",
+    "webpack": "3.8.1",
+    "webpack-cli": "^3.3.2"
+  }
+}
