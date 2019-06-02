@@ -1,2 +1,2 @@
-import KuveytTurkApi from './kuveytturkApi';
-export { KuveytTurkApi };
+import KuveytturkApi from './kuveytturkApi';
+export { KuveytturkApi };
