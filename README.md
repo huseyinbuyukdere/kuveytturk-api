@@ -28,7 +28,7 @@ You need to get a instance from KuveytturkApi object with the your application c
     //...
   
   Then , you can call Api Products below.  
-  **Only Api Products which has client credentials authorization flow can be call directly.**
+
 
     //...
         this.kuveytturkApi.kuveytTurkBranchList().then( (data) => {
@@ -37,7 +37,7 @@ You need to get a instance from KuveytturkApi object with the your application c
 			console.log(error);
 		});     
     //...
-
+ **Only Api Products which has client credentials authorization flow can be call directly.**
  - Information Services
 	 - FX Currency List
 	 - FX Currency Rates
