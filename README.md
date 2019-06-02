@@ -1,8 +1,13 @@
+# kuveytturk-api
+[![Build Status](https://travis-ci.org/huseyinbuyukdere/kuveytturk-api.svg?branch=master)](https://travis-ci.org/huseyinbuyukdere/kuveytturk-api)
+[![npm version](https://badge.fury.io/js/kuveytturk-api.svg)](https://badge.fury.io/js/kuveytturk-api)
+
 
 Javascript Library for the Kuveyt Turk API!
 ------------
 
 This library provides a Javascript interface for the [Kuveyt Turk API](https://developer.kuveytturk.com.tr/#/). Making a request to Kuveyt Turk API requires a valid access token and signature. OAuth procedures are eased and signature generation is automated in this library.
+
 Installation
 ------------
 Get the latest version with npm
