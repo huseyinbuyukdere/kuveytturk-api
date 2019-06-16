@@ -49,6 +49,9 @@ You need to get a instance from KuveytturkApi object with the your application c
  - Authorization Flow
 	 - Get Authorization Url - It generates Url for Customer Authentication with your app credentials.
 	 - Get Authorization Token - It takes token with Authorization Code. (Refresh token mechanism included.)
+	 
+	 
+	 ...  I will add all products by one by. 
 
 Getting Help
 ---
