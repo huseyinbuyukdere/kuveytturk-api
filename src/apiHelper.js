@@ -2,7 +2,7 @@
 import { arrayToString, JSON_to_URLEncoded, generateSignature , getSecondsBetweenDates } from './utils';
 import { URL_ENCODED_TYPE} from './constants';
 
-export function prepareClientCredentialsRequest(scopeList, clientId, secretId) {
+export function getClientCredentialsRequest(scopeList, clientId, secretId) {
     var request = {
         body: '',
         headers: {}
@@ -17,7 +17,41 @@ export function prepareClientCredentialsRequest(scopeList, clientId, secretId) {
     return request;
 }
 
-export function prepareGeneralRequest(token,body,privateKey,query)
+export function getAuthorizationCodeRequest(code,clientId, secretId, redirectUri) {
+    var request = {
+        body: '',
+        headers: {}
+    };
+    var body = {};
+    body.grant_type = "authorization_code";
+    body.client_id = clientId;
+    body.client_secret = secretId;
+    body.redirect_uri = redirectUri;
+    body.code = code;
+    request.headers = Object.assign({}, request.headers , {'Content-Type': URL_ENCODED_TYPE})
+    request.body = JSON_to_URLEncoded(body);
+    return request;
+}
+
+export function getRefreshTokenRequest(refreshToken,clientId,secretId) {
+    var request = {
+        body: '',
+        headers: {}
+    };
+    var body = {};
+    body.grant_type = "refresh_token";
+    body.refresh_token = refreshToken;
+    body.client_id = clientId;
+    body.client_secret = secretId;
+    request.headers = Object.assign({}, request.headers , {'Content-Type': URL_ENCODED_TYPE})
+    request.body = JSON_to_URLEncoded(body);
+    return request;
+}
+
+
+
+
+export function getGeneralRequest(token,body,privateKey,query)
 {
     var request = {
         body : '',
@@ -37,7 +71,7 @@ export function prepareGeneralRequest(token,body,privateKey,query)
     return request;
 }
 
-export function prepareFetch(request) {
+export function getFetch(request) {
     if (request.body) {
 
          return {
@@ -54,14 +88,14 @@ export function prepareFetch(request) {
     }
 }
 
-export function sendGeneralGetRequest(privateKey,url,getCredentialsToken)
+export function getGeneralGetRequest(privateKey,url,getCredentialsToken)
 {
     new Promise((resolve, reject) => {
         getCredentialsToken().then((token) =>
         {
             var body;
-            var request = prepareGeneralRequest(token,body,privateKey);
-            var fetchBody = prepareFetch(request);
+            var request = getGeneralRequest(token,body,privateKey);
+            var fetchBody = getFetch(request);
             fetch(url, fetchBody).
                 then((response) => {
                     if (response.status != 200) {

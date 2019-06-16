@@ -26,6 +26,7 @@ if (env === 'build') {
 
 module.exports = {
   mode: mode,
+  devtool: 'source-map',
   entry: __dirname + '/src/index.js',
   target: 'node', // in order to ignore built-in modules like path, fs, etc.
   externals: [nodeExternals()], 

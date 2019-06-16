@@ -5,10 +5,13 @@ export function arrayToString(list)
 {
 
     var result ='';
-    list.forEach(item => {
-        result += item + ' ';
-    });
-    result = result.substr(0, result.length-1);
+    if(list)
+    {
+        list.forEach(item => {
+            result += item + ' ';
+        });
+        result = result.substr(0, result.length-1);
+    }
     return result;
 }
 
@@ -46,4 +49,27 @@ export function getSecondsBetweenDates(date1,date2)
     }
 
     return (date2-date1)/1000;
+}
+
+export function addParamsToUrl(paramObject,url)
+{
+    let resultUrl = '';
+    if(url)
+    {
+        resultUrl = url;
+        if(paramObject)
+        {
+            resultUrl += '?';
+            Object.keys(paramObject).forEach( key => {
+                if(paramObject[key])
+                {
+                    resultUrl+=key+'='+paramObject[key];
+                    resultUrl+='&';
+                }
+            });
+            resultUrl = resultUrl.substr(0, resultUrl.length-1);            
+        }     
+    }    
+    return resultUrl;
+
 }
