@@ -46,6 +46,9 @@ You need to get a instance from KuveytturkApi object with the your application c
 	 - Kuveyt Turk XTM List
 	 - Bank List
 	 - Bank Branch List
+ - Authorization Flow
+	 - Get Authorization Url - It generates Url for Customer Authentication with your app credentials.
+	 - Get Authorization Token - It takes token with Authorization Code. (Refresh token mechanism included.)
 
 Getting Help
 ---
