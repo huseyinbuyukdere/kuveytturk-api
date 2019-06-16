@@ -1,6 +1,6 @@
 {
   "name": "kuveytturk-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript library to use Kuveyt Turk Participiant Bank api",
   "main": "lib/kuveytturk-api.js",
   "scripts": {
